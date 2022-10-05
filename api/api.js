@@ -1,5 +1,5 @@
 import express from 'express';
-//import { authRoutes, userRoutes, theaterRoutes } from './routes/index.js'
+import { userRoutes } from './routes/index.js';
 
 const api = express()
 
@@ -10,5 +10,8 @@ api.get('/status', (_, res) => {
     msg: 'API Funcionando'
   })
 })
+
+//registro de rutas
+api.use(userRoutes)
 
 export default api;
