@@ -1,5 +1,5 @@
 import express from 'express';
-import { userRoutes, registerLoginRoutes } from './routes/index.js';
+import { userRoutes, registerLoginRoutes, productRoutes } from './routes/index.js';
 import { authValidator } from './middlewares/index.js';
 
 const api = express()
@@ -15,5 +15,6 @@ api.get('/status', (_, res) => {
 api.use(registerLoginRoutes)
 api.use(authValidator);
 api.use(userRoutes)
+api.use(productRoutes)
 
 export default api;
