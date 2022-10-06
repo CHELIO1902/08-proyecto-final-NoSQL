@@ -1,5 +1,6 @@
 import express from 'express';
-import { userRoutes } from './routes/index.js';
+import { userRoutes, registerLoginRoutes } from './routes/index.js';
+import { authValidator } from './middlewares/index.js';
 
 const api = express()
 
@@ -10,8 +11,9 @@ api.get('/status', (_, res) => {
     msg: 'API Funcionando'
   })
 })
-
 //registro de rutas
+api.use(registerLoginRoutes)
+api.use(authValidator);
 api.use(userRoutes)
 
 export default api;
