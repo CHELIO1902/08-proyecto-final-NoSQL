@@ -8,10 +8,10 @@ const config = {
   },
   database: {
     uri: process.env.URI
+  },
+  security: {
+    tokenSecret: process.env.TOKEN_SECRET
   }
- /*  tokens: {
-    secret: process.env.TOKEN_SECRET
-  } */
 }
 
 export default config;

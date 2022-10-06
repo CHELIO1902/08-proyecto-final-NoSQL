@@ -1,19 +1,4 @@
-import { User } from '../models/index.js'
-
-const createUser = async (req, res) => {
-    try {
-        const user = await User.create(req.body);
-        return res.json({
-            msg: "User created successfully",
-            user,
-        });
-    } catch (error) {
-        res.status(500).json({
-            msg: "Error creating user",
-            error,
-        });
-    }
-};
+import { User } from '../models/index.js';
 
 const getAll = async (_, res) => {
     try {
@@ -51,7 +36,7 @@ const getUserById = async (req, res) => {
     }
   };
 
-  const updateUserById = async (req, res) => {
+const updateUserById = async (req, res) => {
     const { id } = req.params;
     try {
         const userUpdate = await User.findByIdAndUpdate(id, req.body, {
@@ -83,4 +68,4 @@ const getUserById = async (req, res) => {
     }
   };
 
-export { createUser, getAll, getUserById, updateUserById, deleteUserById };
+export { getAll, getUserById, updateUserById, deleteUserById };
