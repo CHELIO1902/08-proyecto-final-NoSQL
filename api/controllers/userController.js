@@ -68,4 +68,9 @@ const updateUserById = async (req, res) => {
     }
   };
 
-export { getAll, getUserById, updateUserById, deleteUserById };
+export { 
+  getAll, 
+  getUserById, 
+  updateUserById, 
+  deleteUserById 
+};
