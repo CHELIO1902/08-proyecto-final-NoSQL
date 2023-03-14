@@ -59,7 +59,7 @@ const updateProductById = async (req, res) => {
             new: true,
         });
         return res.json({
-            msg: `The product ${Product.description} updated successfully`,
+            msg: `Product updated successfully`,
             productUpdate,
         });
     } catch (error) {
